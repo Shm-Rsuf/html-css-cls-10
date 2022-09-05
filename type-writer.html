@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>type-writer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      background-color: aquamarine;
+    }
+
+    h1 {
+      color: #444;
+      /* background-color: blueviolet; */
+      display: inline-block;
+      margin-top: 300px;
+      position: relative;
+    }
+
+    h1::before,
+    h1::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* background-color: rgba(102, 51, 153, 0.363); */
+    }
+
+    h1::before {
+      background-color: aquamarine;
+      animation: type-writer 6s steps(26) forwards 1s;
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+
+    h1::after {
+      width: 1.7px;
+      background-color: #444;
+      animation: type-writer 6s steps(26) forwards 1s, blink 0.8s steps(26) infinite;
+    }
+
+    @keyframes type-writer {
+      to {
+        left: 100%;
+      }
+    }
+
+    @keyframes blink {
+      to {
+        background-color: transparent;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello, My Name Is Yousuf.</h1>
+</body>
+
+</html>
